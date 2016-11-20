@@ -10,35 +10,70 @@
 
 int main()
 {
+    // re-assignable, prettier, reverses cls and var order, does not use simplified class name
+
+    // #define NEW(cls, var, ...) new cls(); cls::__init(var, ##__VA_ARGS__)
+
+    B b_next = NEW(__B, b_next);
+
+    // just to show equivalency
+    __B* b_next_ptr = b_next;
+
+    b_next->display();
+
+    delete b_next;
+
+    // re-assign
+    cout << "re-assigning, ";
+    b_next = NEW(__B, b_next, 1, 1.1);
+
+    b_next->display();
+
+    delete b_next;
+
+    // re-assign
+    cout << "re-assigning again, ";
+
+    b_next = NEW(__B, b_next, 'b');
+
+    b_next->display();
+
+    delete b_next;
+
+
+    /*
+    // OLD TESTS BELOW
+
+
 
     // #define NEW(var, cls, args...) cls* var = new cls(); cls::__init(var, args)
 
-    /*
-    NEWOLD(a1, __A, 'a', 'a');
-    NEWOLD(a2, __A, 'a');
-    NEWOLD(a3, __A, nullptr);
 
-    NEWOLD(b1, __B, 1, 1.0);
-    NEWOLD(b2, __B, 'b');
-    NEWOLD(b3, __B, nullptr);
+    NEWOLD(a_1, __A, 'a', 'a');
+    NEWOLD(a_2, __A, 'a');
+    NEWOLD(a_3, __A, nullptr);
 
-    delete a1;
-    delete a2;
-    delete a3;
+    NEWOLD(b_1, __B, 1, 1.0);
+    NEWOLD(b_2, __B, 'b');
+    NEWOLD(b_3, __B, nullptr);
 
-    delete b1;
-    delete b2;
-    delete b3;
+    delete a_1;
+    delete a_2;
+    delete a_3;
 
-     */
+    delete b_1;
+    delete b_2;
+    delete b_3;
+
+
 
     // #define NEW(var, cls, ...) cls* var = new cls(); cls::__init(var, ##__VA_ARGS__)
 
     A arr_a1[3];
 
-    NEW(a1, __A, 'a', 'a');
-    NEW(a2, __A, 'a');
-    NEW(a3, __A);
+    NEWold1(a1, __A, 'a', 'a');
+    NEWold1(a2, __A, 'a');
+    NEWold1(a3, __A);
 
     arr_a1[0] = a1;
     arr_a1[1] = a2;
@@ -47,9 +82,9 @@ int main()
 
     B arr_b1[3];
 
-    NEW(b1, __B, 1, 1.0);
-    NEW(b2, __B, 'b');
-    NEW(b3, __B);
+    NEWold1(b1, __B, 1, 1.0);
+    NEWold1(b2, __B, 'b');
+    NEWold1(b3, __B);
 
     arr_b1[0] = b1;
     arr_b1[1] = b2;
@@ -66,8 +101,6 @@ int main()
         b_ptr->display();
     }
 
-    // TODO: maybe more tests
-
     for (__A* a_ptr : arr_a1)
     {
         delete a_ptr;
@@ -78,5 +111,41 @@ int main()
         delete b_ptr;
     }
 
+
+    cout << "-------------------" << endl;
+
+    // uses simplified class names
+    // #define NEWold2(var, cls, ...) cls var = new __##cls(); __##cls::__init(var, ##__VA_ARGS__)
+
+    NEWold2(a4, A, 'a', 'a');
+    NEWold2(a5, A, 'a');
+    NEWold2(a6, A);
+
+    delete a4;
+    delete a5;
+    delete a6;
+
+    cout << "-------------------" << endl;
+
+    // re-assignable with simplified class name
+    // #define NEWreold1(var, cls, ...) var = new __##cls(); __##cls::__init(var, ##__VA_ARGS__)
+
+    // create b4 variable
+    B  NEWreold1(b4, B, 'b', 'b');
+
+    b4->display();
+
+    delete b4;
+    // re-assign
+    cout << "re-assigning, ";
+    NEWreold1(b4, B);
+
+    b4->display();
+
+    delete b4;
+
+    */
+
     return 0;
+
 }
