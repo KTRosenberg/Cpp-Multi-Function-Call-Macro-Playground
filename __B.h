@@ -7,9 +7,9 @@
 using namespace std;
 #endif
 
+struct __B;
 // simplified name
 typedef __B* B;
-
 
 struct __B
 {
