@@ -18,7 +18,7 @@ The resulting macro is an experiment to see whether an "okay" one-line instructi
     // creation
     B b = NEW(__B, b);
     
-    delete b_next
+    delete b
     
     // re-assignment
     b = NEW(__B, b, 1, 1.1);
