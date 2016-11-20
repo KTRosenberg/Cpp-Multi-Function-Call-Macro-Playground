@@ -10,7 +10,7 @@ The resulting macro is an experiment to see whether an "okay" one-line instructi
 
     #define NEW2(var, cls, ...) cls* var = new cls(); cls::__init(var, ##__VA_ARGS__)
     
-    e.g
+    e.g.
     
     NEW2(a1, __A, 'a', 'a');
     
