@@ -10,14 +10,19 @@ The resulting macro is an experiment to see whether an "okay" one-line instructi
 (The __init functions must be static, but this is perfect, as the functions in the translator structs must also be static anyway.)
  
 # Definition and Usage
-    #define NEW(var, cls, ...) cls* var = new cls(); cls::__init(var, ##__VA_ARGS__)
+    #define NEW(cls, var, ...) new cls(); cls::__init(var, ##__VA_ARGS__)
     
     // USAGE:
     // e.g.
     
-    NEW(a1, __A, 'a', 'a');
+    // creation
+    B b = NEW(__B, b);
     
-    // stores in a new variable of name "a1" an instance of __A* whose __init takes (__A*, char, char)
+    delete b_next
+    
+    // re-assignment
+    b = NEW(__B, b, 1, 1.1);
+    
 
 
 
