@@ -1,14 +1,4 @@
-//
-// Created by Karl Toby Rosenberg on 11/19/16.
-//
-
 #include "__B.h"
-
-#ifndef MAIN
-#include <iostream>
-#include <stdint.h>
-using namespace std;
-#endif
 
 __B::__B() {};
 

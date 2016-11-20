@@ -1,14 +1,3 @@
-//
-// Created by Karl Toby Rosenberg on 11/19/16.
-//
-
-#ifndef MAIN
-#include <iostream>
-#include <stdint.h>
-using namespace std;
-#endif
-
-
 #include "__A.h"
 
 __A::__A() {};

@@ -1,11 +1,11 @@
-//
-// Created by Karl Toby Rosenberg on 11/19/16.
-//
-
 #ifndef MACRO_TESTS_B_H
 #define MACRO_TESTS_B_H
 
+#ifndef MAIN
+#include <iostream>
 #include <stdint.h>
+using namespace std;
+#endif
 
 struct __B {
 

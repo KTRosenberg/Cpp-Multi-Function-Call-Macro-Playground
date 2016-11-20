@@ -14,13 +14,13 @@ int main()
     // #define NEW(var, cls, args...) cls* var = new cls(); cls::__init(var, args)
 
     /*
-    NEW(a1, __A, 'a', 'a');
-    NEW(a2, __A, 'a');
-    NEW(a3, __A, nullptr);
+    NEWOLD(a1, __A, 'a', 'a');
+    NEWOLD(a2, __A, 'a');
+    NEWOLD(a3, __A, nullptr);
 
-    NEW(b1, __B, 1, 1.0);
-    NEW(b2, __B, 'b');
-    NEW(b3, __B, nullptr);
+    NEWOLD(b1, __B, 1, 1.0);
+    NEWOLD(b2, __B, 'b');
+    NEWOLD(b3, __B, nullptr);
 
     delete a1;
     delete a2;
@@ -32,15 +32,15 @@ int main()
 
      */
 
-    // #define NEW2(var, cls, ...) cls* var = new cls(); cls::__init(var, ##__VA_ARGS__)
+    // #define NEW(var, cls, ...) cls* var = new cls(); cls::__init(var, ##__VA_ARGS__)
 
-    NEW2(a1, __A, 'a', 'a');
-    NEW2(a2, __A, 'a');
-    NEW2(a3, __A);
+    NEW(a1, __A, 'a', 'a');
+    NEW(a2, __A, 'a');
+    NEW(a3, __A);
 
-    NEW2(b1, __B, 1, 1.0);
-    NEW2(b2, __B, 'b');
-    NEW2(b3, __B);
+    NEW(b1, __B, 1, 1.0);
+    NEW(b2, __B, 'b');
+    NEW(b3, __B);
 
     delete a1;
     delete a2;
