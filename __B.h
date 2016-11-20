@@ -7,6 +7,10 @@
 using namespace std;
 #endif
 
+// simplified name
+typedef __B* B;
+
+
 struct __B
 {
     int32_t i;

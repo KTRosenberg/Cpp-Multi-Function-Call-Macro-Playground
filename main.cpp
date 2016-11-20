@@ -34,7 +34,7 @@ int main()
 
     // #define NEW(var, cls, ...) cls* var = new cls(); cls::__init(var, ##__VA_ARGS__)
 
-    __A* arr_a1[3];
+    A arr_a1[3];
 
     NEW(a1, __A, 'a', 'a');
     NEW(a2, __A, 'a');
@@ -45,7 +45,7 @@ int main()
     arr_a1[2] = a3;
 
 
-    __B* arr_b1[3];
+    B arr_b1[3];
 
     NEW(b1, __B, 1, 1.0);
     NEW(b2, __B, 'b');
@@ -56,12 +56,12 @@ int main()
     arr_b1[2] = b3;
 
 
-    for (__A* a_ptr : arr_a1)
+    for (A a_ptr : arr_a1)
     {
        a_ptr->display();
     }
 
-    for (__B* b_ptr : arr_b1)
+    for (B b_ptr : arr_b1)
     {
         b_ptr->display();
     }
