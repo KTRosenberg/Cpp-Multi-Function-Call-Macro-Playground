@@ -7,13 +7,18 @@
 using namespace std;
 #endif
 
-struct __A {
+struct __A
+{
+    char c1;
+    char c2;
 
     __A();
 
     static void __init(__A*, char, char);
     static void __init(__A*, char);
     static void __init(__A*);
+
+    void display();
 
 };
 

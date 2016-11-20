@@ -7,13 +7,19 @@
 using namespace std;
 #endif
 
-struct __B {
+struct __B
+{
+    int32_t i;
+    float f;
+    char c;
 
     __B();
 
     static void __init(__B*, int32_t, float);
     static void __init(__B*, char);
     static void __init(__B*);
+
+    void display();
 
 };
 
